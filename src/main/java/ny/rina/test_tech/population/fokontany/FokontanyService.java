@@ -64,4 +64,11 @@ public class FokontanyService {
         dto.setCode(fokontany.getCode());
         return dto;
     }
+
+    public List<FokontanyDTO> createMany(List<FokontanyDTO> fokontanyDTOs) {
+
+        return fokontanyDTOs.stream()
+                .map(this::create)
+                .toList();
+    }
 }

@@ -42,4 +42,13 @@ public class FokontanyController {
         fokontanyService.delete(id);
         return ResponseEntity.noContent().build();
     }
+
+    @PostMapping("/bulk")
+    public ResponseEntity<List<FokontanyDTO>> createMany(
+            @RequestBody List<FokontanyDTO> fokontanyDTOs) {
+
+        return ResponseEntity
+                .status(HttpStatus.CREATED)
+                .body(fokontanyService.createMany(fokontanyDTOs));
+    }
 }
