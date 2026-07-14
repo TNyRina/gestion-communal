@@ -1,4 +1,4 @@
-package ny.rina.test_tech.population.citoyen;
+package ny.rina.gestioncommune.population.citoyen;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

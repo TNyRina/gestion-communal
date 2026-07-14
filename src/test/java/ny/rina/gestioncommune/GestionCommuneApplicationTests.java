@@ -1,10 +1,10 @@
-package ny.rina.test_tech;
+package ny.rina.gestioncommune;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class TestTechApplicationTests {
+class GestionCommuneApplicationTests {
 
 	@Test
 	void contextLoads() {

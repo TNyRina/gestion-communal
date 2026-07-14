@@ -1,7 +1,7 @@
-package ny.rina.test_tech.population.citoyen.DTO;
+package ny.rina.gestioncommune.population.citoyen.DTO;
 
-import ny.rina.test_tech.population.citoyen.Citoyen;
-import ny.rina.test_tech.population.fokontany.DTO.FokontanyMapper;
+import ny.rina.gestioncommune.population.citoyen.Citoyen;
+import ny.rina.gestioncommune.population.fokontany.DTO.FokontanyMapper;
 
 public class CitoyenMapper {
     public static CitoyenResponseDTO toDTO(Citoyen citoyen){

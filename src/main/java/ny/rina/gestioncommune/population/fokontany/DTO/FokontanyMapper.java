@@ -1,6 +1,6 @@
-package ny.rina.test_tech.population.fokontany.DTO;
+package ny.rina.gestioncommune.population.fokontany.DTO;
 
-import ny.rina.test_tech.population.fokontany.Fokontany;
+import ny.rina.gestioncommune.population.fokontany.Fokontany;
 
 public class FokontanyMapper {
     public static FokontanyDTO toDTO(Fokontany fokontany) {

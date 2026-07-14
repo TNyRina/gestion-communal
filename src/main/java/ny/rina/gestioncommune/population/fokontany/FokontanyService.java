@@ -1,10 +1,10 @@
-package ny.rina.test_tech.population.fokontany;
+package ny.rina.gestioncommune.population.fokontany;
 
 import org.springframework.stereotype.Service;
 
 import jakarta.transaction.Transactional;
-import ny.rina.test_tech.population.fokontany.DTO.FokontanyDTO;
-import ny.rina.test_tech.population.fokontany.DTO.FokontanyMapper;
+import ny.rina.gestioncommune.population.fokontany.DTO.FokontanyDTO;
+import ny.rina.gestioncommune.population.fokontany.DTO.FokontanyMapper;
 import jakarta.persistence.EntityNotFoundException;
 
 import java.util.List;

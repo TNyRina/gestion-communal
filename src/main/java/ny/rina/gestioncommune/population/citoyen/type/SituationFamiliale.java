@@ -1,4 +1,4 @@
-package ny.rina.test_tech.population.citoyen.type;
+package ny.rina.gestioncommune.population.citoyen.type;
 
 public enum SituationFamiliale {
     CELIBATAIRE,

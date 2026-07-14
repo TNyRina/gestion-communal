@@ -1,4 +1,4 @@
-package ny.rina.test_tech.population.personne;
+package ny.rina.gestioncommune.population.personne;
 
 import jakarta.persistence.*;
 import lombok.*;

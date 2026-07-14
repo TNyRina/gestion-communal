@@ -1,4 +1,4 @@
-package ny.rina.test_tech;
+package ny.rina.gestioncommune;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

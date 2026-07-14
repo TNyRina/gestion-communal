@@ -1,10 +1,10 @@
-package ny.rina.test_tech.population.citoyen;
+package ny.rina.gestioncommune.population.citoyen;
 
-import ny.rina.test_tech.population.citoyen.type.SituationFamiliale;
-import ny.rina.test_tech.population.fokontany.Fokontany;
-import ny.rina.test_tech.population.personne.Personne;
 import jakarta.persistence.*;
 import lombok.*;
+import ny.rina.gestioncommune.population.citoyen.type.SituationFamiliale;
+import ny.rina.gestioncommune.population.fokontany.Fokontany;
+import ny.rina.gestioncommune.population.personne.Personne;
 
 @Entity
 @Table(name = "citoyens")

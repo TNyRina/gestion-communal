@@ -1,4 +1,4 @@
-package ny.rina.test_tech.population.fokontany;
+package ny.rina.gestioncommune.population.fokontany;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

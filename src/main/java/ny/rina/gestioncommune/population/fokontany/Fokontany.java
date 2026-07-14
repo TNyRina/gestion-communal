@@ -1,8 +1,8 @@
-package ny.rina.test_tech.population.fokontany;
+package ny.rina.gestioncommune.population.fokontany;
 
 import jakarta.persistence.*;
 import lombok.*;
-import ny.rina.test_tech.population.citoyen.Citoyen;
+import ny.rina.gestioncommune.population.citoyen.Citoyen;
 
 import java.util.List;
 

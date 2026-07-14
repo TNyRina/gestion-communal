@@ -1,9 +1,9 @@
-package ny.rina.test_tech.population.citoyen.service;
+package ny.rina.gestioncommune.population.citoyen.service;
 
 import java.util.List;
 
-import ny.rina.test_tech.population.citoyen.DTO.CitoyenRequestDTO;
-import ny.rina.test_tech.population.citoyen.DTO.CitoyenResponseDTO;
+import ny.rina.gestioncommune.population.citoyen.DTO.CitoyenRequestDTO;
+import ny.rina.gestioncommune.population.citoyen.DTO.CitoyenResponseDTO;
 
 public interface CitoyenService {
     List<CitoyenResponseDTO> findAll();

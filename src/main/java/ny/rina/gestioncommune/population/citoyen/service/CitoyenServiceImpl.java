@@ -1,16 +1,16 @@
-package ny.rina.test_tech.population.citoyen.service;
+package ny.rina.gestioncommune.population.citoyen.service;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
 import jakarta.persistence.EntityNotFoundException;
-import ny.rina.test_tech.population.citoyen.Citoyen;
-import ny.rina.test_tech.population.citoyen.CitoyenRepository;
-import ny.rina.test_tech.population.citoyen.DTO.CitoyenMapper;
-import ny.rina.test_tech.population.citoyen.DTO.CitoyenRequestDTO;
-import ny.rina.test_tech.population.citoyen.DTO.CitoyenResponseDTO;
-import ny.rina.test_tech.population.fokontany.Fokontany;
-import ny.rina.test_tech.population.fokontany.FokontanyRepository;
+import ny.rina.gestioncommune.population.citoyen.Citoyen;
+import ny.rina.gestioncommune.population.citoyen.CitoyenRepository;
+import ny.rina.gestioncommune.population.citoyen.DTO.CitoyenMapper;
+import ny.rina.gestioncommune.population.citoyen.DTO.CitoyenRequestDTO;
+import ny.rina.gestioncommune.population.citoyen.DTO.CitoyenResponseDTO;
+import ny.rina.gestioncommune.population.fokontany.Fokontany;
+import ny.rina.gestioncommune.population.fokontany.FokontanyRepository;
 
 
 @Service
