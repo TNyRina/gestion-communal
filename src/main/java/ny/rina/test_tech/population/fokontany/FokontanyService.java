@@ -3,6 +3,8 @@ package ny.rina.test_tech.population.fokontany;
 import org.springframework.stereotype.Service;
 
 import jakarta.transaction.Transactional;
+import ny.rina.test_tech.population.fokontany.DTO.FokontanyDTO;
+import ny.rina.test_tech.population.fokontany.DTO.FokontanyMapper;
 import jakarta.persistence.EntityNotFoundException;
 
 import java.util.List;
@@ -20,14 +22,14 @@ public class FokontanyService {
 
     public List<FokontanyDTO> getAll() {
         return fokontanyRepository.findAll().stream()
-                .map(this::convertToDTO)
+                .map(FokontanyMapper::toDTO)
                 .collect(Collectors.toList());
     }
 
     public FokontanyDTO getById(Long id) {
         Fokontany fokontany = fokontanyRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Fokontany non trouvé avec l'id : " + id));
-        return convertToDTO(fokontany);
+        return FokontanyMapper.toDTO(fokontany);
     }
 
     public FokontanyDTO create(FokontanyDTO dto) {
@@ -36,7 +38,7 @@ public class FokontanyService {
         fokontany.setCode(dto.getCode());
         
         Fokontany saved = fokontanyRepository.save(fokontany);
-        return convertToDTO(saved);
+        return FokontanyMapper.toDTO(saved);
     }
 
     public FokontanyDTO update(Long id, FokontanyDTO dto) {
@@ -47,7 +49,7 @@ public class FokontanyService {
         fokontany.setCode(dto.getCode());
         
         Fokontany updated = fokontanyRepository.save(fokontany);
-        return convertToDTO(updated);
+        return FokontanyMapper.toDTO(updated);
     }
 
     public void delete(Long id) {
@@ -57,13 +59,6 @@ public class FokontanyService {
         fokontanyRepository.deleteById(id);
     }
 
-    private FokontanyDTO convertToDTO(Fokontany fokontany) {
-        FokontanyDTO dto = new FokontanyDTO();
-        dto.setId(fokontany.getId());
-        dto.setNom(fokontany.getNom());
-        dto.setCode(fokontany.getCode());
-        return dto;
-    }
 
     public List<FokontanyDTO> createMany(List<FokontanyDTO> fokontanyDTOs) {
 

@@ -1,4 +1,4 @@
-package ny.rina.test_tech.population.fokontany;
+package ny.rina.test_tech.population.fokontany.DTO;
 
 import lombok.Getter;
 import lombok.Setter;
