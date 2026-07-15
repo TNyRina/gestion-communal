@@ -1,21 +1,19 @@
-package ny.rina.gestioncommune.population.citoyen.service;
-import java.util.List;
+package ny.rina.gestioncommune.population.citoyen;
 
 import org.springframework.stereotype.Service;
 
 import jakarta.persistence.EntityNotFoundException;
 import ny.rina.gestioncommune.geo.fokontany.Fokontany;
 import ny.rina.gestioncommune.geo.fokontany.FokontanyRepository;
-import ny.rina.gestioncommune.population.citoyen.Citoyen;
-import ny.rina.gestioncommune.population.citoyen.CitoyenRepository;
 import ny.rina.gestioncommune.population.citoyen.dto.CitoyenMapper;
 import ny.rina.gestioncommune.population.citoyen.dto.CitoyenRequestDTO;
 import ny.rina.gestioncommune.population.citoyen.dto.CitoyenResponseDTO;
+import ny.rina.gestioncommune.population.personne.service.PersonneServiceImpl;
 
 
 @Service
 public class CitoyenServiceImpl 
-        implements CitoyenService {
+        extends PersonneServiceImpl<Citoyen, CitoyenResponseDTO, CitoyenRequestDTO> {
 
 
     private final CitoyenRepository citoyenRepository;
@@ -28,38 +26,10 @@ public class CitoyenServiceImpl
             CitoyenRepository citoyenRepository,
             FokontanyRepository fokontanyRepository
     ){
-
+        super(citoyenRepository);
         this.citoyenRepository = citoyenRepository;
         this.fokontanyRepository = fokontanyRepository;
     }
-
-
-
-    @Override
-    public List<CitoyenResponseDTO> findAll(){
-
-        return citoyenRepository.findAll()
-                .stream()
-                .map(CitoyenMapper::toResponseDTO)
-                .toList();
-    }
-
-
-
-    @Override
-    public CitoyenResponseDTO findById(Long id){
-
-        Citoyen citoyen = citoyenRepository.findById(id)
-                .orElseThrow(
-                    () -> new EntityNotFoundException(
-                        "Citoyen introuvable"
-                    )
-                );
-
-
-        return CitoyenMapper.toResponseDTO(citoyen);
-    }
-
 
 
 
@@ -143,11 +113,8 @@ public class CitoyenServiceImpl
     }
 
 
-
-    @Override
-    public void delete(Long id){
-
-        citoyenRepository.deleteById(id);
-    }
-
+	@Override
+	protected CitoyenResponseDTO toResponseDTO(Citoyen citoyen) {
+		return CitoyenMapper.toResponseDTO(citoyen);
+	}
 }

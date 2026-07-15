@@ -8,17 +8,16 @@ import org.springframework.web.bind.annotation.*;
 
 import ny.rina.gestioncommune.population.citoyen.dto.CitoyenRequestDTO;
 import ny.rina.gestioncommune.population.citoyen.dto.CitoyenResponseDTO;
-import ny.rina.gestioncommune.population.citoyen.service.CitoyenService;
 
 
 @RestController
 @RequestMapping("/api/citoyens")
 public class CitoyenController {
-    private final CitoyenService service;
+    private final CitoyenServiceImpl service;
 
 
     public CitoyenController(
-            CitoyenService service
+            CitoyenServiceImpl service
     ){
 
         this.service = service;
