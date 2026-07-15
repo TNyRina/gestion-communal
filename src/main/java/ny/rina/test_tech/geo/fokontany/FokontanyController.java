@@ -1,4 +1,3 @@
-
 package ny.rina.test_tech.geo.fokontany;
 
 import org.springframework.http.HttpStatus;

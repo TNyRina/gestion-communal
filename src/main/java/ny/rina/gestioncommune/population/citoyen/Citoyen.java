@@ -1,5 +1,4 @@
 package ny.rina.gestioncommune.population.citoyen;
-
 import jakarta.persistence.*;
 import lombok.*;
 import ny.rina.gestioncommune.population.citoyen.type.SituationFamiliale;

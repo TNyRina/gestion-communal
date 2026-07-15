@@ -4,13 +4,13 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import jakarta.persistence.EntityNotFoundException;
-import ny.rina.gestioncommune.population.citoyen.Citoyen;
-import ny.rina.gestioncommune.population.citoyen.CitoyenRepository;
-import ny.rina.gestioncommune.population.citoyen.DTO.CitoyenMapper;
-import ny.rina.gestioncommune.population.citoyen.DTO.CitoyenRequestDTO;
-import ny.rina.gestioncommune.population.citoyen.DTO.CitoyenResponseDTO;
-import ny.rina.gestioncommune.population.fokontany.Fokontany;
-import ny.rina.gestioncommune.population.fokontany.FokontanyRepository;
+import ny.rina.test_tech.population.citoyen.Citoyen;
+import ny.rina.test_tech.population.citoyen.CitoyenRepository;
+import ny.rina.test_tech.population.citoyen.dto.CitoyenMapper;
+import ny.rina.test_tech.population.citoyen.dto.CitoyenRequestDTO;
+import ny.rina.test_tech.population.citoyen.dto.CitoyenResponseDTO;
+import ny.rina.test_tech.geo.fokontany.Fokontany;
+import ny.rina.test_tech.geo.fokontany.FokontanyRepository;
 
 
 @Service
@@ -40,7 +40,7 @@ public class CitoyenServiceImpl
 
         return citoyenRepository.findAll()
                 .stream()
-                .map(CitoyenMapper::toDTO)
+                .map(CitoyenMapper::toResponseDTO)
                 .toList();
     }
 
@@ -57,7 +57,7 @@ public class CitoyenServiceImpl
                 );
 
 
-        return CitoyenMapper.toDTO(citoyen);
+        return CitoyenMapper.toResponseDTO(citoyen);
     }
 
 
@@ -98,7 +98,7 @@ public class CitoyenServiceImpl
 
 
 
-        return CitoyenMapper.toDTO(
+        return CitoyenMapper.toResponseDTO(
                 citoyenRepository.save(citoyen)
         );
     }
@@ -137,7 +137,7 @@ public class CitoyenServiceImpl
 
 
 
-        return CitoyenMapper.toDTO(
+        return CitoyenMapper.toResponseDTO(
                 citoyenRepository.save(citoyen)
         );
     }
