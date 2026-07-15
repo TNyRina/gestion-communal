@@ -1,7 +1,7 @@
 package ny.rina.test_tech.population.citoyen;
 
 import ny.rina.test_tech.population.citoyen.type.SituationFamiliale;
-import ny.rina.test_tech.population.fokontany.Fokontany;
+import ny.rina.test_tech.geo.fokontany.Fokontany;
 import ny.rina.test_tech.population.personne.Personne;
 import jakarta.persistence.*;
 import lombok.*;

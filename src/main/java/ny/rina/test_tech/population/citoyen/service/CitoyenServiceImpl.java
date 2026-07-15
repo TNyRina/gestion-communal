@@ -9,8 +9,8 @@ import ny.rina.test_tech.population.citoyen.CitoyenRepository;
 import ny.rina.test_tech.population.citoyen.DTO.CitoyenMapper;
 import ny.rina.test_tech.population.citoyen.DTO.CitoyenRequestDTO;
 import ny.rina.test_tech.population.citoyen.DTO.CitoyenResponseDTO;
-import ny.rina.test_tech.population.fokontany.Fokontany;
-import ny.rina.test_tech.population.fokontany.FokontanyRepository;
+import ny.rina.test_tech.geo.fokontany.Fokontany;
+import ny.rina.test_tech.geo.fokontany.FokontanyRepository;
 
 
 @Service

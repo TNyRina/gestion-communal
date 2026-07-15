@@ -1,10 +1,10 @@
-package ny.rina.test_tech.population.fokontany;
+package ny.rina.test_tech.geo.fokontany;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import ny.rina.test_tech.population.fokontany.DTO.FokontanyDTO;
+import ny.rina.test_tech.geo.fokontany.dto.FokontanyDTO;
 
 import java.util.List;
 
@@ -20,12 +20,12 @@ public class FokontanyController {
 
     @GetMapping
     public ResponseEntity<List<FokontanyDTO>> getAllFokontany() {
-        return ResponseEntity.ok(fokontanyService.getAll());
+        return ResponseEntity.ok(fokontanyService.findAll());
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<FokontanyDTO> getFokontanyById(@PathVariable Long id) {
-        return ResponseEntity.ok(fokontanyService.getById(id));
+        return ResponseEntity.ok(fokontanyService.findById(id));
     }
 
     @PostMapping
