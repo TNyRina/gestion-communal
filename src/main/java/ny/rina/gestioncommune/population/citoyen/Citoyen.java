@@ -1,8 +1,8 @@
 package ny.rina.gestioncommune.population.citoyen;
 import jakarta.persistence.*;
 import lombok.*;
+import ny.rina.gestioncommune.geo.fokontany.Fokontany;
 import ny.rina.gestioncommune.population.citoyen.type.SituationFamiliale;
-import ny.rina.gestioncommune.population.fokontany.Fokontany;
 import ny.rina.gestioncommune.population.personne.Personne;
 
 @Entity
