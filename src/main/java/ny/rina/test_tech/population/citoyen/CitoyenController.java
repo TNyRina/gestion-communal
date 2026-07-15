@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import ny.rina.test_tech.population.citoyen.DTO.CitoyenRequestDTO;
-import ny.rina.test_tech.population.citoyen.DTO.CitoyenResponseDTO;
+import ny.rina.test_tech.population.citoyen.dto.CitoyenRequestDTO;
+import ny.rina.test_tech.population.citoyen.dto.CitoyenResponseDTO;
 import ny.rina.test_tech.population.citoyen.service.CitoyenService;
 
 @RestController
