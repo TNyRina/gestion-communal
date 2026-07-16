@@ -1,4 +1,4 @@
-package ny.rina.gestioncommune.etat_civile;
+package ny.rina.gestioncommune.etat_civile.acte;
 
 import java.time.LocalDate;
 
@@ -8,20 +8,20 @@ import ny.rina.gestioncommune.geo.commune.Commune;
 import ny.rina.gestioncommune.population.officierEtat.OfficierEtat;
 
 @Entity
-@Table(name = "acts")
+@Table(name = "actes")
 @Inheritance(strategy = InheritanceType.JOINED)
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public abstract class Act {
+public abstract class Acte {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
 
     @Column(nullable = false, unique = true)
-    private String nomero;
+    private String numero;
 
     private LocalDate dateEtablissement;
 

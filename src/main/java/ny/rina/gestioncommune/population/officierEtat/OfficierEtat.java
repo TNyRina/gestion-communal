@@ -5,7 +5,7 @@ import java.util.List;
 
 import jakarta.persistence.*;
 import lombok.*;
-import ny.rina.gestioncommune.etat_civile.Act;
+import ny.rina.gestioncommune.etat_civile.acte.Acte;
 import ny.rina.gestioncommune.population.agentCommunale.AgentCommunale;
 
 @Entity
@@ -21,5 +21,5 @@ public class OfficierEtat extends AgentCommunale{
         cascade = CascadeType.ALL,
         orphanRemoval = true
     )
-    private List<Act> acts= new ArrayList<>();
+    private List<Acte> acts= new ArrayList<>();
 }

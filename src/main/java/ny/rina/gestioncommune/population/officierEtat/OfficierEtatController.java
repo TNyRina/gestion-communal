@@ -7,7 +7,7 @@ import ny.rina.gestioncommune.population.officierEtat.dto.OfficierEtatResponseDT
 import ny.rina.gestioncommune.population.personne.PersonneController;
 
 @RestController
-@RequestMapping("/api/officiers-etat")
+@RequestMapping("/api/officiers")
 public class OfficierEtatController extends PersonneController<OfficierEtat, OfficierEtatResponseDTO, OfficierEtatRequestDTO, OfficierEtatServiceImpl>{
 
     protected OfficierEtatController(OfficierEtatServiceImpl service) {

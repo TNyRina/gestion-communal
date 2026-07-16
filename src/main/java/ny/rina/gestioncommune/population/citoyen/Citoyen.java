@@ -1,6 +1,10 @@
 package ny.rina.gestioncommune.population.citoyen;
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.*;
 import lombok.*;
+import ny.rina.gestioncommune.etat_civile.naissance.ActeNaissance;
 import ny.rina.gestioncommune.geo.fokontany.Fokontany;
 import ny.rina.gestioncommune.population.citoyen.type.SituationFamiliale;
 import ny.rina.gestioncommune.population.personne.Personne;
@@ -24,5 +28,14 @@ public class Citoyen extends Personne {
 
     @Enumerated(EnumType.STRING)
     private SituationFamiliale situationFamiliale;
+
+    @OneToOne(mappedBy = "enfant", fetch = FetchType.LAZY)
+    private ActeNaissance acteNaissance;
+
+    @OneToMany(mappedBy = "pere", fetch = FetchType.LAZY)
+    private List<ActeNaissance> enfantsEnTantQuePere = new ArrayList<>();
+
+    @OneToMany(mappedBy = "mere", fetch = FetchType.LAZY)
+    private List<ActeNaissance> enfantsEnTantQueMere = new ArrayList<>();
 
 }

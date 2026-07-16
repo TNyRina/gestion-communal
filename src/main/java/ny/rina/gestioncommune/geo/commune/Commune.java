@@ -5,7 +5,7 @@ import java.util.List;
 
 import jakarta.persistence.*;
 import lombok.*;
-import ny.rina.gestioncommune.etat_civile.Act;
+import ny.rina.gestioncommune.etat_civile.acte.Acte;
 import ny.rina.gestioncommune.geo.fokontany.Fokontany;
 import ny.rina.gestioncommune.geo.location.Location;
 import ny.rina.gestioncommune.population.agentCommunale.AgentCommunale;
@@ -40,5 +40,5 @@ public class Commune extends Location {
     @OneToMany(
         mappedBy = "commune"
     )
-    private List<Act> acts= new ArrayList<>();
+    private List<Acte> acts= new ArrayList<>();
 }

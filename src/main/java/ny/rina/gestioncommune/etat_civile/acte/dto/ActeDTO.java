@@ -1,4 +1,4 @@
-package ny.rina.gestioncommune.etat_civile.dto;
+package ny.rina.gestioncommune.etat_civile.acte.dto;
 
 import java.time.LocalDate;
 
@@ -6,7 +6,7 @@ import lombok.*;
 
 @Getter
 @Setter
-public class ActDTO {
+public class ActeDTO {
 
     private String numero;
 
