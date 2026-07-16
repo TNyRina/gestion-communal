@@ -6,7 +6,7 @@ import ny.rina.gestioncommune.etat_civile.acte.Acte;
 import ny.rina.gestioncommune.population.citoyen.Citoyen;
 
 @Entity
-@Table(name = "acts_naissance")
+@Table(name = "actes_naissance")
 @Getter
 @Setter
 @NoArgsConstructor

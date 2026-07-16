@@ -4,6 +4,63 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
+
+/**
+ * Implémentation générique des opérations CRUD communes pour les services
+ * métier de l'application.
+ *
+ * Cette classe fournit une implémentation partielle de {@link Service} afin
+ * d'éviter la duplication du code pour les différentes ressources métier.
+ *
+ * Elle prend en charge les opérations communes :
+ * <ul>
+ *     <li>Recherche d'une ressource par son identifiant</li>
+ *     <li>Récupération de toutes les ressources</li>
+ *     <li>Suppression d'une ressource</li>
+ * </ul>
+ *
+ * Les opérations de création et de modification ne sont pas implémentées ici
+ * car elles peuvent nécessiter des traitements spécifiques selon le domaine
+ * métier. Elles doivent être définies dans les classes services concrètes.
+ *
+ * Cette classe utilise les types génériques suivants :
+ * <ul>
+ *     <li>
+ *         {@code E} : type de l'entité JPA manipulée
+ *     </li>
+ *     <li>
+ *         {@code R} : type du DTO utilisé pour les réponses
+ *     </li>
+ *     <li>
+ *         {@code Q} : type du DTO utilisé pour les requêtes
+ *     </li>
+ * </ul>
+ *
+ * La conversion entre l'entité et le DTO de réponse est déléguée aux classes
+ * filles via la méthode abstraite {@link #toResponseDTO(Object)}.
+ *
+ * Exemple d'utilisation :
+ *
+ * <pre>
+ * {@code
+ * public class CitoyenServiceImpl
+ *        extends ServiceImpl<
+ *              Citoyen,
+ *              CitoyenResponseDTO,
+ *              CitoyenRequestDTO> {
+ *
+ *     public CitoyenServiceImpl(
+ *          CitoyenRepository repository) {
+ *          super(repository);
+ *     }
+ * }
+ * }
+ * </pre>
+ *
+ * @param <E> type de l'entité JPA
+ * @param <R> type du DTO de réponse
+ * @param <Q> type du DTO de requête
+ */
 public abstract class ServiceImpl<
         E, // Enity
         R, // Response DTO
@@ -20,6 +77,8 @@ public abstract class ServiceImpl<
         this.repository = repository;
     }
 
+
+
      @Override
     public R findById(Long id) {
 
@@ -31,6 +90,8 @@ public abstract class ServiceImpl<
     }
 
 
+
+    
     @Override
     public List<R> findAll() {
         return repository.findAll()
@@ -40,12 +101,26 @@ public abstract class ServiceImpl<
     }
 
 
+
+
+
     @Override
     public void delete(Long id) {
         repository.deleteById(id);
     }
 
 
+
+
+    /**
+     * Convertit une entité en DTO de réponse.
+     *
+     * Cette méthode doit être implémentée par chaque service concret,
+     * car chaque domaine possède sa propre structure de DTO.
+     *
+     * @param entity entité à convertir
+     * @return DTO représentant l'entité
+     */
     protected abstract R toResponseDTO(E entity);
 
 }

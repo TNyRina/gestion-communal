@@ -20,12 +20,20 @@ public class ActeNaissanceServiceImpl extends ServiceImpl<ActeNaissance, ActeNai
     private final OfficierEtatRepository officierEtatRepository;
     private final CitoyenRepository citoyenRepository;
 
+
+
+
     protected ActeNaissanceServiceImpl(ActeNaissanceRepository repository, CommuneRepository communeRepository, OfficierEtatRepository officierEtatRepository, CitoyenRepository citoyenRepository) {
         super(repository);
         this.communeRepository = communeRepository;
         this.officierEtatRepository = officierEtatRepository;
         this.citoyenRepository = citoyenRepository;
     }
+
+
+
+
+
 
     @Override
     public ActeNaissanceResponseDTO save(ActeNaissanceRequestDTO dto) {
@@ -35,6 +43,11 @@ public class ActeNaissanceServiceImpl extends ServiceImpl<ActeNaissance, ActeNai
             repository.save(toEntity(acte, dto))
         );
     }
+
+
+
+
+
 
     @Override
     public ActeNaissanceResponseDTO update(Long id, ActeNaissanceRequestDTO dto) {
@@ -46,6 +59,10 @@ public class ActeNaissanceServiceImpl extends ServiceImpl<ActeNaissance, ActeNai
         );
     }
 
+
+
+
+    
     @Override
     protected ActeNaissanceResponseDTO toResponseDTO(ActeNaissance entity) {
         return ActeNaissanceMapperDTO.toResponseDTO(entity);
