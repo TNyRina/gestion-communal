@@ -33,6 +33,9 @@ public class Citoyen extends Personne {
     @OneToOne(mappedBy = "enfant", fetch = FetchType.LAZY)
     private ActeNaissance acteNaissance;
 
+    @OneToOne(mappedBy = "dece", fetch = FetchType.LAZY)
+    private ActeNaissance acteDece;
+
     @OneToMany(mappedBy = "pere", fetch = FetchType.LAZY)
     private List<ActeNaissance> enfantsEnTantQuePere = new ArrayList<>();
 
