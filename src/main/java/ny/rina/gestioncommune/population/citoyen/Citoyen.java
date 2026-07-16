@@ -4,6 +4,7 @@ import java.util.List;
 
 import jakarta.persistence.*;
 import lombok.*;
+import ny.rina.gestioncommune.etat_civile.mariage.ActeMariage;
 import ny.rina.gestioncommune.etat_civile.naissance.ActeNaissance;
 import ny.rina.gestioncommune.geo.fokontany.Fokontany;
 import ny.rina.gestioncommune.population.citoyen.type.SituationFamiliale;
@@ -37,5 +38,14 @@ public class Citoyen extends Personne {
 
     @OneToMany(mappedBy = "mere", fetch = FetchType.LAZY)
     private List<ActeNaissance> enfantsEnTantQueMere = new ArrayList<>();
+
+    @OneToMany(mappedBy = "mari")
+    private List<ActeMariage> mariagesCommeMari = new ArrayList<>();
+
+    @OneToMany(mappedBy = "femme")
+    private List<ActeMariage> mariagesCommeFemme = new ArrayList<>();
+
+    @ManyToMany(mappedBy = "temoins")
+    private List<ActeMariage> acteMariages = new ArrayList<>();
 
 }
