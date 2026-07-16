@@ -1,5 +1,7 @@
 package ny.rina.gestioncommune.population.officierEtat;
 
+import org.springframework.stereotype.Service;
+
 import jakarta.persistence.EntityNotFoundException;
 import ny.rina.gestioncommune.geo.commune.Commune;
 import ny.rina.gestioncommune.geo.commune.CommuneRepository;
@@ -9,12 +11,14 @@ import ny.rina.gestioncommune.population.officierEtat.dto.OfficierEtatResponseDT
 import ny.rina.gestioncommune.population.officierEtat.dto.OffierEtatMapper;
 import ny.rina.gestioncommune.population.personne.dto.PersonneMapperDTO;
 
-public class OfficerEtatServiceImpl extends AgentCommunaleServiceImpl<OfficierEtat, OfficierEtatResponseDTO, OfficierEtatRequestDTO, OfficierEtatRepository> {
+
+@Service
+public class OfficierEtatServiceImpl extends AgentCommunaleServiceImpl<OfficierEtat, OfficierEtatResponseDTO, OfficierEtatRequestDTO, OfficierEtatRepository> {
 
     private final OfficierEtatRepository officerEtatrepository;
     private final CommuneRepository communeRepository;
 
-    protected OfficerEtatServiceImpl(OfficierEtatRepository officerEtatrepository, CommuneRepository communeRepository) {
+    protected OfficierEtatServiceImpl(OfficierEtatRepository officerEtatrepository, CommuneRepository communeRepository) {
         super(officerEtatrepository);
         this.officerEtatrepository = officerEtatrepository;
         this.communeRepository = communeRepository;

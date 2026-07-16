@@ -10,7 +10,7 @@ import ny.rina.gestioncommune.population.personne.Personne;
 @Entity
 @Table(name = "agents")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "foonction")
+@DiscriminatorColumn(name = "fonction")
 @Getter
 @Setter
 @NoArgsConstructor
