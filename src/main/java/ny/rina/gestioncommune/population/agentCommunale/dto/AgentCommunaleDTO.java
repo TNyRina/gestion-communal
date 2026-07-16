@@ -9,7 +9,7 @@ import ny.rina.gestioncommune.population.personne.dto.PersonneDTO;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class AgentCommunaleDTO extends PersonneDTO {
+public abstract class AgentCommunaleDTO extends PersonneDTO {
     private String matricule;
 
     private LocalDate dateEmbauche;

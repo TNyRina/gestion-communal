@@ -44,4 +44,18 @@ public class PersonneMapperDTO {
 
         return dto;
     }
+
+    public static <T extends Personne, D extends PersonneDTO> T toEntity(D dto, Supplier<T> supplier){
+        T entity = supplier.get();
+
+        entity.setNom(dto.getNom());
+        entity.setPrenom(dto.getPrenom());
+        entity.setDateNaissance(dto.getDateNaissance());
+        entity.setLieuNaissance(dto.getLieuNaissance());
+        entity.setSexe(dto.getSexe());
+        entity.setNumeroCIN(dto.getNumeroCIN());
+        entity.setAdresse(dto.getAdresse());
+
+        return entity;
+    }
 }
