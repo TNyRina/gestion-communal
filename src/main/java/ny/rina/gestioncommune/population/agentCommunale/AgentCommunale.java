@@ -9,11 +9,13 @@ import ny.rina.gestioncommune.population.personne.Personne;
 
 @Entity
 @Table(name = "agents")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "foonction")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class AgentCommunale extends Personne {
+public abstract class AgentCommunale extends Personne {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "commune_id")
