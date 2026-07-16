@@ -8,6 +8,7 @@ import ny.rina.gestioncommune.geo.fokontany.FokontanyRepository;
 import ny.rina.gestioncommune.population.citoyen.dto.CitoyenMapper;
 import ny.rina.gestioncommune.population.citoyen.dto.CitoyenRequestDTO;
 import ny.rina.gestioncommune.population.citoyen.dto.CitoyenResponseDTO;
+import ny.rina.gestioncommune.population.personne.dto.PersonneMapperDTO;
 import ny.rina.gestioncommune.population.personne.service.PersonneServiceImpl;
 
 
@@ -34,9 +35,16 @@ public class CitoyenServiceImpl
 
 
     @Override
-    public CitoyenResponseDTO save(
-            CitoyenRequestDTO dto
-    ){
+    public CitoyenResponseDTO save(CitoyenRequestDTO dto) {
+        Citoyen citoyen = new Citoyen();
+        citoyen = PersonneMapperDTO.toEntity(dto, Citoyen::new);
+
+
+        citoyen.setProfession(dto.getProfession());
+        citoyen.setSituationFamiliale(
+                dto.getSituationFamiliale()
+        );
+        
 
         Fokontany fokontany =
             fokontanyRepository.findById(dto.getFokontanyId())
@@ -45,25 +53,6 @@ public class CitoyenServiceImpl
                     "Fokontany introuvable"
                 )
             );
-
-
-        Citoyen citoyen = new Citoyen();
-
-
-        citoyen.setNom(dto.getNom());
-        citoyen.setPrenom(dto.getPrenom());
-        citoyen.setDateNaissance(dto.getDateNaissance());
-        citoyen.setSexe(dto.getSexe());
-        citoyen.setLieuNaissance(dto.getLieuNaissance());
-        citoyen.setNumeroCIN(dto.getNumeroCIN());
-        citoyen.setAdresse(dto.getAdresse());
-
-
-        citoyen.setProfession(dto.getProfession());
-        citoyen.setSituationFamiliale(
-                dto.getSituationFamiliale()
-        );
-
         citoyen.setFokontany(fokontany);
 
 
@@ -89,9 +78,9 @@ public class CitoyenServiceImpl
                     )
                 );
 
+        citoyen = PersonneMapperDTO.updateEntity(citoyen, dto);
 
-        citoyen.setNom(dto.getNom());
-        citoyen.setPrenom(dto.getPrenom());
+        
         citoyen.setProfession(dto.getProfession());
         citoyen.setSituationFamiliale(
                 dto.getSituationFamiliale()
@@ -117,4 +106,5 @@ public class CitoyenServiceImpl
 	protected CitoyenResponseDTO toResponseDTO(Citoyen citoyen) {
 		return CitoyenMapper.toResponseDTO(citoyen);
 	}
+
 }
