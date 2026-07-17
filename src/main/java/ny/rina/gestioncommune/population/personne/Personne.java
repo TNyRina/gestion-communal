@@ -2,6 +2,7 @@ package ny.rina.gestioncommune.population.personne;
 
 import jakarta.persistence.*;
 import lombok.*;
+import ny.rina.gestioncommune.population.personne.type.Sexe;
 
 import java.time.LocalDate;
 

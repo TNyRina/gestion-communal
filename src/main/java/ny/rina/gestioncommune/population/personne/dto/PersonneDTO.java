@@ -1,6 +1,6 @@
 package ny.rina.gestioncommune.population.personne.dto;
 import lombok.*;
-import ny.rina.gestioncommune.population.personne.Sexe;
+import ny.rina.gestioncommune.population.personne.type.Sexe;
 
 import java.time.LocalDate;
 

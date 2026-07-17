@@ -64,6 +64,8 @@ public class ActeDeceServiceImpl extends ActeServiceImpl<
                                                             
     private final CitoyenRepository citoyenRepository;
 
+
+
     protected ActeDeceServiceImpl(
         ActeDeceRepository repository, 
         CommuneRepository communeRepository,
@@ -78,6 +80,10 @@ public class ActeDeceServiceImpl extends ActeServiceImpl<
             this.citoyenRepository = citoyenRepository;
     }
 
+
+
+
+    
     @Override
     protected ActeDeceResponseDTO toResponseDTO(ActeDece entity) {
         return ActeDeceMapperDTO.toResponseDTO(entity);

@@ -98,7 +98,7 @@ public class ActeMariageServiceImpl extends ActeServiceImpl<
                                     : dto.getTemoinsId()
                                         .stream()
                                         .map((id) -> citoyenRepository.findById(id).orElseThrow(() ->
-                        new RuntimeException("Mari Introuvable!")))
+                        new RuntimeException("Temoin Introuvable!")))
                                         .toList();
 
         acte.setTemoins(temoins);
