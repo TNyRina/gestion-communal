@@ -12,7 +12,7 @@ public class ActeDTO {
 
     private LocalDate dateEtablissement;
 
-    private Long officierId;
+    private Long officierEtatId;
 
     private Long communeId;
 }

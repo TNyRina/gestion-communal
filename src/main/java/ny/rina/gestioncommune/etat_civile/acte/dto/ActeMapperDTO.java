@@ -55,7 +55,7 @@ public class ActeMapperDTO {
 
         dto.setNumero(entity.getNumero());
         dto.setDateEtablissement(entity.getDateEtablissement());
-        dto.setOfficierId(entity.getOfficierEtat().getId());
+        dto.setOfficierEtatId(entity.getOfficierEtat().getId());
         dto.setCommuneId(entity.getCommune().getId());
 
         return dto;

@@ -4,6 +4,7 @@ import java.util.List;
 
 import jakarta.persistence.*;
 import lombok.*;
+import ny.rina.gestioncommune.etat_civile.dece.ActeDece;
 import ny.rina.gestioncommune.etat_civile.mariage.ActeMariage;
 import ny.rina.gestioncommune.etat_civile.naissance.ActeNaissance;
 import ny.rina.gestioncommune.geo.fokontany.Fokontany;
@@ -34,7 +35,7 @@ public class Citoyen extends Personne {
     private ActeNaissance acteNaissance;
 
     @OneToOne(mappedBy = "dece", fetch = FetchType.LAZY)
-    private ActeNaissance acteDece;
+    private ActeDece acteDece;
 
     @OneToMany(mappedBy = "pere", fetch = FetchType.LAZY)
     private List<ActeNaissance> enfantsEnTantQuePere = new ArrayList<>();

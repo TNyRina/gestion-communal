@@ -78,6 +78,9 @@ public abstract class ServiceImpl<
     }
 
 
+    
+
+
 
      @Override
     public R findById(Long id) {
@@ -122,5 +125,7 @@ public abstract class ServiceImpl<
      * @return DTO représentant l'entité
      */
     protected abstract R toResponseDTO(E entity);
+
+    protected abstract void toEntity(E enity, Q dto);
 
 }

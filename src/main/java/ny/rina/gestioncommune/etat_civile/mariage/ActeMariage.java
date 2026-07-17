@@ -10,7 +10,7 @@ import ny.rina.gestioncommune.population.citoyen.Citoyen;
 
 
 @Entity
-@Table(name = "actes_naissance")
+@Table(name = "actes_mariage")
 @Getter
 @Setter
 @NoArgsConstructor
