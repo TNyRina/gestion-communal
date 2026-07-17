@@ -126,6 +126,20 @@ public abstract class ServiceImpl<
      */
     protected abstract R toResponseDTO(E entity);
 
+
+    /**
+     * Copie les données d'un DTO de requête dans une entité.
+     *
+     * Cette méthode est appelée lors des opérations de création ou de mise à jour
+     * afin de transférer les informations du DTO vers l'entité métier.
+     *
+     * Les classes concrètes doivent implémenter cette méthode pour gérer
+     * les attributs spécifiques de leur domaine, y compris la résolution
+     * des relations avec d'autres entités si nécessaire.
+     *
+     * @param entity entité à initialiser ou à mettre à jour
+     * @param dto DTO contenant les données à copier dans l'entité
+     */
     protected abstract void toEntity(E enity, Q dto);
 
 }

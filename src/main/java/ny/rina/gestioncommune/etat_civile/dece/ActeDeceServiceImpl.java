@@ -12,6 +12,47 @@ import ny.rina.gestioncommune.population.citoyen.CitoyenRepository;
 import ny.rina.gestioncommune.population.officierEtat.OfficierEtatRepository;
 
 
+
+/**
+ * Service métier permettant de gérer les opérations relatives aux actes de décès.
+ *
+ * Cette classe étend {@link ActeServiceImpl} afin de réutiliser la logique
+ * commune de gestion des actes d'état civil, notamment :
+ * <ul>
+ *     <li>la création d'un acte</li>
+ *     <li>la mise à jour d'un acte existant</li>
+ *     <li>la gestion des informations communes aux actes</li>
+ *     <li>la résolution de la commune et de l'officier d'état civil associés</li>
+ * </ul>
+ *
+ * Elle ajoute la logique spécifique à l'acte de décès, notamment la gestion
+ * de la personne décédée associée à l'acte.
+ *
+ * La conversion entre l'entité {@link ActeDece} et ses DTOs est déléguée
+ * à {@link ActeDeceMapperDTO}.
+ *
+ * Cette classe utilise :
+ * <ul>
+ *     <li>
+ *         {@code ActeDece} comme entité métier
+ *     </li>
+ *     <li>
+ *         {@link ActeDeceResponseDTO} comme DTO de réponse API
+ *     </li>
+ *     <li>
+ *         {@link ActeDeceRequestDTO} comme DTO de requête API
+ *     </li>
+ * </ul>
+ *
+ * Exemple d'utilisation :
+ *
+ * <pre>
+ * {@code
+ * ActeDeceServiceImpl service =
+ *      new ActeDeceServiceImpl(...);
+ * }
+ * </pre>
+ */
 @Service
 public class ActeDeceServiceImpl extends ActeServiceImpl<
                                                             ActeDece, 

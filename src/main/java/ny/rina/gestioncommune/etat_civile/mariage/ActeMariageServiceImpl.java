@@ -12,6 +12,45 @@ import ny.rina.gestioncommune.population.citoyen.Citoyen;
 import ny.rina.gestioncommune.population.citoyen.CitoyenRepository;
 import ny.rina.gestioncommune.population.officierEtat.OfficierEtatRepository;
 
+
+/**
+ * Service métier permettant de gérer les opérations relatives aux actes
+ * de mariage.
+ *
+ * Cette classe étend {@link ActeServiceImpl} afin de réutiliser la logique
+ * commune de gestion des actes d'état civil, notamment :
+ * <ul>
+ *     <li>la création d'un acte</li>
+ *     <li>la modification d'un acte existant</li>
+ *     <li>la gestion des informations communes d'un acte</li>
+ *     <li>la récupération de la commune et de l'officier d'état civil</li>
+ * </ul>
+ *
+ * Elle ajoute les traitements spécifiques à l'acte de mariage :
+ * <ul>
+ *     <li>association du mari</li>
+ *     <li>association de la femme</li>
+ *     <li>association des témoins du mariage</li>
+ * </ul>
+ *
+ * Les conversions entre l'entité {@link ActeMariage} et les DTOs associés
+ * sont déléguées à {@link ActeMariageMapperDTO}.
+ *
+ * Cette classe utilise :
+ * <ul>
+ *     <li>{@code ActeMariage} comme entité métier</li>
+ *     <li>{@link ActeMariageResponseDTO} comme DTO de réponse</li>
+ *     <li>{@link ActeMariageRequestDTO} comme DTO de requête</li>
+ * </ul>
+ *
+ * Exemple d'utilisation :
+ *
+ * <pre>
+ * {@code
+ * ActeMariageServiceImpl service;
+ * }
+ * </pre>
+ */
 @Service
 public class ActeMariageServiceImpl extends ActeServiceImpl<
                                                                 ActeMariage, 
